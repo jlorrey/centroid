@@ -1,3 +1,8 @@
+// - 1.00 Lec 14 -
+// Jocelyn Lorrey
+// April 9, 2018
+
+
 var init = function(){
 
     // setup canvas
@@ -29,6 +34,19 @@ var calculateCentroid = function(points){
 
     // return centroid with the following format
     // return {x:10, y:30};  
+    var x_sum = 0
+    var y_sum = 0
+    
+    points.forEach(function(point){
+        x_sum+= point.x;
+        y_sum+= point.y;
+    });
+
+    
+    var x_centroid = Math.floor(x_sum/points.length);
+    var y_centroid = Math.floor(y_sum/points.length);
+
+    return {x:x_centroid, y:y_centroid};
 };
 
 
